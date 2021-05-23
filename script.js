@@ -7,12 +7,25 @@ function uniqueSetElements(arr){
 
 console.log(uniqueSetElements(animals));
 
-// function to use new Set() method
+// function to use arr.filter() method
 function uniqueFilterElements(arr){
-  let unique = arr.filter((item, index)=>{
+  return arr.filter((item, index)=>{
     return arr.indexOf(item) == index;
+  })  
+}
+
+console.log(uniqueFilterElements(animals));
+
+
+// function to use arr.forEach() method
+function uniqueForEachElements(arr){
+  let unique = [];
+  arr.forEach(item=>{
+    if(!unique.includes(item)){
+      unique.push(item);
+    }
   })
   return unique;
 }
 
-console.log(uniqueFilterElements(animals));
+console.log(uniqueForEachElements(animals));
